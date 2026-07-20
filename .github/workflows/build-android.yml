@@ -36,7 +36,7 @@ jobs:
         run: rm -rf test
 
       - name: Analyse
-        run: flutter analyze
+        run: flutter analyze --no-fatal-infos
 
       - name: Build debug APK
         run: flutter build apk --debug

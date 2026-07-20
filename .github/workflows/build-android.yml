@@ -21,10 +21,14 @@ jobs:
           cache: true
       - name: Generate Android project files
         run: flutter create --platforms=android --org com.delhicakes .
-      - name: Install dependencies
-        run: flutter pub get
-      - name: Analyse
-        run: flutter analyze
+     - name: Install dependencies
+  run: flutter pub get
+
+- name: Remove generated sample test
+  run: rm -rf test
+
+- name: Analyse
+  run: flutter analyze
       - name: Build debug APK
         run: flutter build apk --debug
       - name: Upload APK
